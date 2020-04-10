@@ -13,10 +13,10 @@ let navalnyFly = function() {
   flyInterval = requestAnimationFrame(navalnyFly);
   count = count + 0.3;
   if (count < 100) {
-    navalnyImg.style.top = `${count}vh`;
-    navalnyPlain.style.left = `${count}vh`;
+    navalnyImg.style.transform = `translateY(${count}vh)`;
+    navalnyPlain.style.transform = `translateX(${count}vh)`;
   } else if (count < 200) {
-    navalnyPlain.style.left = `${count}vh`;
+    navalnyPlain.style.transform = `translateX(${count}vh)`;
   } else {
     alert('Блэт Путэн');
     cancelAnimationFrame(flyInterval);
@@ -41,8 +41,8 @@ let button = false;
   navalnyReset.addEventListener('click', () => {
     flyInterval = cancelAnimationFrame(flyInterval);
     count = 0;
-    navalnyImg.style.top = `${count}vh`;
-    navalnyPlain.style.left = `${count}vh`;
+    navalnyImg.style.transform = `translateY(${count}vh)`;
+    navalnyPlain.style.transform = `translateX(${count}vh)`;
     button = false;
   });
 
